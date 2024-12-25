@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        {/* <img src={Logo} alt="Logo" /> */}
+        <img src={Logo} alt="Logo" />
         <span>TaskMate</span>
       </div>
       <div className="themeSelector">
