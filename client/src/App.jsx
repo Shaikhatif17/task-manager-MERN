@@ -1,39 +1,25 @@
-import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
-import Addtask from "./components/Addtask";
-import ShowTask from "./components/ShowTask";
+import React from 'react'
+import "./app.css"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";  
+import Todo from './components/Todo';
 
-import "./App.css";
 
-const App = () => {
-  const [tasklist, setTasklist] = useState(
-    JSON.parse(localStorage.getItem("tasklist")) || []
-  );
-  const [task, setTask] = useState({});
-
-  useEffect(() => {
-    localStorage.setItem("tasklist", JSON.stringify(tasklist));
-  }, [tasklist]);
-
+function App() {
+  const headstyle ={
+    textAlign : "center"
+  }
   return (
-    <div className="App">
-      <div className="container">
-        <Header />
-        <Addtask
-          task={task}
-          setTask={setTask}
-          tasklist={tasklist}
-          setTasklist={setTasklist}
-        />
-        <ShowTask
-          task={task}
-          setTask={setTask}
-          tasklist={tasklist}
-          setTasklist={setTasklist}
-        />
-      </div>
+ 
+    <div>
+      <h1 style={headstyle}></h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Todo/>}/>
+        </Routes>
+      </Router>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
