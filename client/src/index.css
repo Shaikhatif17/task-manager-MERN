@@ -83,7 +83,6 @@ button:focus-visible {
   list-style: none;
 }
 
-/* themes */
 .light {
   background-color: #ffffff;
   transition: all 500ms;
@@ -161,4 +160,3 @@ button:focus-visible {
     );
   background-blend-mode: overlay, overlay, normal;
 }
-/* themes */
